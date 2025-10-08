@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 /**
@@ -8,7 +9,7 @@ import styles from "./page.module.css";
 export default function HomeworkNavigation() {
   // 作业列表
   const homeworks = [
-    { id: "week1-2", title: "第1周 井子格作业", path: "/week1-2" }
+    { id: "week1-2", title: "第1周 井子格作业", path: "/week1-2" }, // 修改路径为正确的格式
     // 可以随时添加更多作业
   ];
 
@@ -28,13 +29,13 @@ export default function HomeworkNavigation() {
         
         <div className={styles.ctas}>
           {homeworks.map(homework => (
-            <a
+            <Link
               key={homework.id}
               className={styles.secondary}
               href={homework.path}
             >
               {homework.title}
-            </a>
+            </Link>
           ))}
         </div>
       </main>

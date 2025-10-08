@@ -1,6 +1,8 @@
+'use client'; // 确保这行在文件顶部
+
 import { useState } from 'react';
-import styles from './index.module.css'
-import Link from 'next/link'; 
+import styles from './page.module.css';
+import Link from 'next/link';   
 
 function Square({ value, onSquareClick }) {
   return (
@@ -85,20 +87,15 @@ export default function Game() {
   });
 
   return (
-    <div className="game">
-      <div className="game-board">
+    <div className={styles.game}>
+      <div className={styles.gameBoard}>
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
-      <div className="game-info">
+      <div className={styles.gameInfo}>
         <ol>{moves}</ol>
       </div>
-
-      <div className="game-ctas">
-        <Link
-          href="/"
-        >
-          返回导航页
-        </Link>
+      <div className={styles.backToHome}>
+        <Link href="/">返回主页</Link> {/* 使用href而不是to */}
       </div>
     </div>
   );
