@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './index.module.css'
+import Link from 'next/link'; 
 
 function Square({ value, onSquareClick }) {
   return (
@@ -93,11 +94,11 @@ export default function Game() {
       </div>
 
       <div className="game-ctas">
-        <a
+        <Link
           href="/"
         >
           返回导航页
-        </a>
+        </Link>
       </div>
     </div>
   );
